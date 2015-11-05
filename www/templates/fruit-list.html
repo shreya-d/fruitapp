@@ -1,0 +1,32 @@
+<ion-view title="Fruits">
+
+    <div class="bar bar-subheader item-input-inset"  >
+       <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"   >  </i>
+          <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey">
+
+              <button class="button button-clear" ng-click="clearSearch()" >X</button>
+             
+        </label>
+        <button class="button button-clear" ng-click="search()" >Search</button>
+       
+                                    
+        
+    </div>
+   
+    <ion-content class="has-header has-subheader">
+        
+             <ion-list>
+            <ion-item  type="item-text-wrap" class="item-avatar"
+                      href="#/fruits/{{fruit.id}}"  ng-repeat="fruit in fruits | filter:searchKey">
+                <img src="pics/{{fruit.pic}}"/>
+                {{fruit.Name}}
+                <p>{{fruit.title}}</p>
+            </ion-item>
+        </ion-list>
+       <!-- <ion-item  ng-repeat="fruit in fruits |filter:search">
+          {{fruit.Name}}
+         </ion-item> -->
+    </ion-content>
+
+</ion-view>
